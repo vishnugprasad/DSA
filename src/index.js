@@ -1,14 +1,14 @@
-function a() {
-  console.log(this);
-  this.newvariable="hello";
-}
+// function a() {
+//   console.log(this);
+//   this.newvariable="hello";
+// }
 
-var b = function(){
-  console.log(this)
-}
+// var b = function(){
+//   console.log(this)
+// }
 
-a();
-console.log(newvariable)
+// a();
+// console.log(newvariable)
 
 // b();
 
@@ -118,7 +118,9 @@ console.log(newvariable)
 // greet("hello")(" Vishnu")
 
 
+const string = ["a","b","C","d"];
 
+console.log(string[2])
 
 
 
