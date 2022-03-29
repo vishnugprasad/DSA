@@ -117,12 +117,33 @@
 
 // greet("hello")(" Vishnu")
 
+//...................................ARRAY................................................................
+
 
 const string = ["a","b","C","d"];
 
-console.log(string[2])
+// console.log(string[2])
+
+// //push
+
+// string.push("e")  // O(1)
+
+// console.log(string);
+
+// //pop
+// string.pop() //O(1)
+
+// console.log(string);
+
+//unshift ..... this will shift the locations/index of the array. 
+
+string.unshift("x")  // O(n) -  hence an iteration is happening in the array
+console.log(string);
 
 
+string.splice(2, 2, 'vishnu');
+
+console.log(string);
 
 
 
