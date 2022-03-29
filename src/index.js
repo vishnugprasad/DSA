@@ -1,17 +1,135 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+function a() {
+  console.log(this);
+  this.newvariable="hello";
+}
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+var b = function(){
+  console.log(this)
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+a();
+console.log(newvariable)
+
+// b();
+
+// var c = {
+//   name: "object c",
+//   log: function(){
+
+//     var self = this
+//     console.log(self)
+//     self.name = "updated name"
+
+//     function setname(newname){
+//       self.name = newname;
+//     }
+//     setname("changed again in C ! wow")
+//     console.log(self);
+//   }
+
+// }
+
+// c.log()
+
+// var arr = [
+//   1,
+//   { name: "vishnu" },
+//   function greetings(name) {
+//     var greeting = "hello ";
+//     console.log(greeting + name);
+//   },
+//   "hello",
+// ];
+
+// // console.log(arr)
+
+// arr[2](arr[1].name)
+
+// function greet(firstname, lastname, language) {
+
+//   language = language||"english"
+//   lastname = lastname|| "please mention"
+
+//   if (arguments.length === 0 ){
+//     console.log("misssing parameters");
+//     console.log("--------------------");
+//   }
+//   firstname=  firstname||"enter name"
+//   console.log(firstname);
+//   console.log(lastname);
+//   console.log(language);
+//   console.log(arguments);
+// }
+
+// greet();
+// greet("vishnu");
+// greet("vishnu","g prasad");
+// greet("vishnu","g prasad","english")
+
+// function greet(firstname, lastname, language) {
+//   language = language || "english";
+
+//   if (language === "en") {
+//     console.log("hello" + " " + firstname + " " + lastname);
+//   }
+//   if (language === "es") {
+//     console.log("hola" + " " + firstname + " " + lastname);
+//   }
+// }
+
+// function greetEnglish(firstname, lastname) {
+//   greet(firstname, lastname, "en");
+// }
+
+// function greetSpanish(firstname, lastname) {
+//   greet(firstname, lastname, "es");
+// }
+
+
+// greetEnglish("David", "Warner")
+// greetSpanish("Anna", "Delvi")
+
+
+// var greetings = function(name) {
+//   console.log("hello " + name);
+// }("vishnu")
+
+// // console.log(greetings)
+
+
+
+// (function (name) {
+
+//   console.log("hello " + name);
+
+// }("Mahesh"))
+
+
+
+
+
+// function greet(say) {
+  
+//   return function(name){
+//     console.log(say + " " + name);
+//   }
+// }
+
+// greet("hello")(" Vishnu")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
