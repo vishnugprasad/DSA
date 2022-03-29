@@ -120,7 +120,7 @@
 //...................................ARRAY................................................................
 
 
-const string = ["a","b","C","d"];
+// const string = ["a","b","C","d"];
 
 // console.log(string[2])
 
@@ -137,13 +137,13 @@ const string = ["a","b","C","d"];
 
 //unshift ..... this will shift the locations/index of the array. 
 
-string.unshift("x")  // O(n) -  hence an iteration is happening in the array
-console.log(string);
+// string.unshift("x")  // O(n) -  hence an iteration is happening in the array
+// console.log(string);
 
 
-string.splice(2, 2, 'vishnu');
+// string.splice(2, 2, 'vishnu');
 
-console.log(string);
+// console.log(string);
 
 
 
