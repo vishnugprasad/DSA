@@ -124,7 +124,7 @@
 
 // console.log(string[2])
 
-// //push
+//push
 
 // string.push("e")  // O(1)
 
@@ -135,7 +135,7 @@
 
 // console.log(string);
 
-//unshift ..... this will shift the locations/index of the array. 
+// // unshift ..... this will shift the locations/index of the array. 
 
 // string.unshift("x")  // O(n) -  hence an iteration is happening in the array
 // console.log(string);
@@ -146,11 +146,41 @@
 // console.log(string);
 
 
+//.........................IMPLEMENTING AN ARRAY........................................
+
+class MyArray{
+    constructor() {
+        this.length = 0;
+        this.data = {};
+    }
+
+    get(index){
+        return this.data[index]
+    }
+
+    push(item){
+        this.data[this.length] = item;
+        this.length++
+        return this.length;
+    }
+
+    pop(){
+        const lastItem = this.data[this.length-1]
+        delete this.data[this.length-1]
+        this.length--
+        return lastItem
+    }
+}
 
 
+const newArray = new MyArray();
+newArray.push("vishnu");
+newArray.push("Anna")
+newArray.push("Delhvi")
 
-
-
+console.log(newArray.get(0));
+newArray.pop();
+console.log(newArray)
 
 
 
