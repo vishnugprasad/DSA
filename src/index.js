@@ -205,19 +205,27 @@
 
 //........................REVERSE A STRING...........................
 
-function reverseString(str){
-    if(!str || str.length < 2|| typeof str !== "string"){
-        return "invalid operation"
-    }
+// function reverseString(str){
+//     if(!str || str.length < 2|| typeof str !== "string"){
+//         return "invalid operation"
+//     }
 
-    const backwards = [];
-    const totalItems = str.length-1;
-    for( let i = totalItems; i >= 0; i--){
-        backwards.push(str[i]);
-    }
-    console.log(backwards);
-    return backwards.join("")
-}
+//     const backwards = [];
+//     const totalItems = str.length-1;
+//     for( let i = totalItems; i >= 0; i--){
+//         backwards.push(str[i]);
+//     }
+//     console.log(backwards);
+//     return backwards.join("")
+// }
 
-reverseString("my name is vishnu")
+
+// function reverse3(str){
+//     console.log(str.split('').reverse().join(''))
+// }
+
+const reverse4 = str => str.split('').reverse().join('')
+
+// reverseString("my name is vishnu")
+ console.log(  reverse4("my name is vishnu"))
 
