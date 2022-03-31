@@ -170,17 +170,37 @@ class MyArray{
         this.length--
         return lastItem
     }
+
+    delete(index){
+        const item = this.data[index]
+
+        this.shiftItem(index)
+        
+    }
+
+    shiftItem(index){
+        for( let i = index; i< this.length-1; i++){
+            this.data[index] = this.data[index+1]
+        }
+        delete this.data[this.length-1];
+        this.length--;
+    }
 }
 
 
 const newArray = new MyArray();
 newArray.push("vishnu");
+newArray.push("G")
+newArray.push("Prasad")
 newArray.push("Anna")
 newArray.push("Delhvi")
 
-console.log(newArray.get(0));
-newArray.pop();
+
+// console.log(newArray.get(0));
+// newArray.pop();
 console.log(newArray)
+newArray.delete(3)
+console.log(newArray);
 
 
 
