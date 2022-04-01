@@ -85,10 +85,8 @@
 //   greet(firstname, lastname, "es");
 // }
 
-
 // greetEnglish("David", "Warner")
 // greetSpanish("Anna", "Delvi")
-
 
 // var greetings = function(name) {
 //   console.log("hello " + name);
@@ -96,20 +94,14 @@
 
 // // console.log(greetings)
 
-
-
 // (function (name) {
 
 //   console.log("hello " + name);
 
 // }("Mahesh"))
 
-
-
-
-
 // function greet(say) {
-  
+
 //   return function(name){
 //     console.log(say + " " + name);
 //   }
@@ -118,7 +110,6 @@
 // greet("hello")(" Vishnu")
 
 //...................................ARRAY................................................................
-
 
 // const string = ["a","b","C","d"];
 
@@ -135,16 +126,14 @@
 
 // console.log(string);
 
-// // unshift ..... this will shift the locations/index of the array. 
+// // unshift ..... this will shift the locations/index of the array.
 
 // string.unshift("x")  // O(n) -  hence an iteration is happening in the array
 // console.log(string);
 
-
 // string.splice(2, 2, 'vishnu');
 
 // console.log(string);
-
 
 //.........................IMPLEMENTING AN ARRAY........................................
 
@@ -175,7 +164,7 @@
 //         const item = this.data[index]
 
 //         this.shiftItem(index)
-        
+
 //     }
 
 //     shiftItem(index){
@@ -187,7 +176,6 @@
 //     }
 // }
 
-
 // const newArray = new MyArray();
 // newArray.push("vishnu");
 // newArray.push("G")
@@ -195,13 +183,11 @@
 // newArray.push("Anna")
 // newArray.push("Delhvi")
 
-
 // // console.log(newArray.get(0));
 // // newArray.pop();
 // console.log(newArray)
 // newArray.delete(3)
 // console.log(newArray);
-
 
 //........................REVERSE A STRING...........................
 
@@ -219,13 +205,32 @@
 //     return backwards.join("")
 // }
 
-
 // function reverse3(str){
 //     console.log(str.split('').reverse().join(''))
 // }
 
-const reverse4 = str => str.split('').reverse().join('')
+// const reverse4 = str => str.split('').reverse().join('')
 
-// reverseString("my name is vishnu")
- console.log(  reverse4("my name is vishnu"))
+// // reverseString("my name is vishnu")
+//  console.log(  reverse4("my name is vishnu"))
 
+function reverse(str) {
+  if (!str || str.length < 2 || typeof str != "string") {
+    return "invalid operation";
+  }
+
+  const backwards = [];
+  const totalItems = str.length - 1;
+  console.log(str.length);
+  for (let i = totalItems; i >= 0; i--) {
+    backwards.push(str[i]);
+  }
+  return backwards.join("");
+}
+
+console.log(reverse("vishnu"));
+
+
+const reverse2 = (str)=> [...str].reverse().join("");
+
+console.log(reverse2("achu"));
