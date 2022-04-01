@@ -214,23 +214,67 @@
 // // reverseString("my name is vishnu")
 //  console.log(  reverse4("my name is vishnu"))
 
-function reverse(str) {
-  if (!str || str.length < 2 || typeof str != "string") {
-    return "invalid operation";
-  }
+// function reverse(str) {
+//   if (!str || str.length < 2 || typeof str != "string") {
+//     return "invalid operation";
+//   }
 
-  const backwards = [];
-  const totalItems = str.length - 1;
-  console.log(str.length);
-  for (let i = totalItems; i >= 0; i--) {
-    backwards.push(str[i]);
-  }
-  return backwards.join("");
+//   const backwards = [];
+//   const totalItems = str.length - 1;
+//   console.log(str.length);
+//   for (let i = totalItems; i >= 0; i--) {
+//     backwards.push(str[i]);
+//   }
+//   return backwards.join("");
+// }
+
+// console.log(reverse("vishnu"));
+
+
+// const reverse2 = (str)=> [...str].reverse().join("");
+
+// console.log(reverse2("achu"));
+
+
+
+
+function mergeSortArray(arr1,arr2){
+    const sortedArray = []
+
+    let array1Item = arr1[0];
+    let array2Item = arr2[0];
+    let i =1;
+    let j =1;
+    // console.log(array1Item,array2Item);
+
+    if(arr1.length === 0){
+        return arr2;
+    }
+
+    if(arr2.length === 0){
+        return arr1;
+    }
+
+    while(array1Item||array2Item){
+        console.log(array1Item,array2Item);
+        if(!array2Item||array1Item < array2Item){
+            sortedArray.push(array1Item)
+        array1Item = arr1[i]
+        i++
+        }
+        else{
+            sortedArray.push(array2Item);
+            array2Item = arr2[j];
+            j++
+        }
+
+    }
+
+
+
+    return sortedArray
 }
 
-console.log(reverse("vishnu"));
-
-
-const reverse2 = (str)=> [...str].reverse().join("");
-
-console.log(reverse2("achu"));
+   console.log(mergeSortArray([1,5,7,9],[2,3,6,8]));
+ 
+  
