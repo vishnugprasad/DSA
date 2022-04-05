@@ -230,58 +230,94 @@
 
 // console.log(reverse("vishnu"));
 
-
 // const reverse2 = (str)=> [...str].reverse().join("");
 
 // console.log(reverse2("achu"));
 
-
-
-
-
 //.......................................MERGE SORT ARRAY................................
 
+// function mergeSortArray(arr1,arr2){
+//     const sortedArray = []
+
+//     let array1Item = arr1[0];
+//     let array2Item = arr2[0];
+//     let i =1;
+//     let j =1;
+//     // console.log(array1Item,array2Item);
+
+//     if(arr1.length === 0){
+//         return arr2;
+//     }
+
+//     if(arr2.length === 0){
+//         return arr1;
+//     }
+
+//     while(array1Item||array2Item){
+//         console.log(array1Item,array2Item);
+//         if(!array2Item||array1Item < array2Item){
+//             sortedArray.push(array1Item)
+//         array1Item = arr1[i]
+//         i++
+//         }
+//         else{
+//             sortedArray.push(array2Item);
+//             array2Item = arr2[j];
+//             j++
+//         }
+
+//     }
+
+//     return sortedArray
+// }
+
+//    console.log(mergeSortArray([1,5,7,9],[2,3,6,8]));
+
+//.......................HASH TABLES.................................
+
+// let user = {
+//   name: "harry",
+//   age: 17,
+//   magic: true,
+//   scream: function () {
+//     console.log("ahhhhaaa");
+//   },
+// };
+
+// console.log(user.name);
+// console.log(user.age);
+// console.log(user);
+// user.spell = "expelliarmus"
+
+// user.age = 18;
+// console.log(user);
 
 
 
 
-function mergeSortArray(arr1,arr2){
-    const sortedArray = []
 
-    let array1Item = arr1[0];
-    let array2Item = arr2[0];
-    let i =1;
-    let j =1;
-    // console.log(array1Item,array2Item);
 
-    if(arr1.length === 0){
-        return arr2;
+// ........................FIRST RECURRING CHARACTER............................................
+
+// IF THE ARRAY IS [2,3,4,5,2,7,8,9] THE OP SHOULD BE 2
+// IF THE ARRAY IS [1,2,3,5,1,5,6,2] THE O/P SHOULD BE 1
+
+
+
+
+
+
+function recurringCharacter(input) {
+  for (let i = 0; i < input.length; i++) {
+    for (let j = i+1; j < input.length; j++) {
+      
+    //  console.log(input[i],input[j]);
+      if ( input[i] === input[j]){
+        return input[i]
+      }
     }
-
-    if(arr2.length === 0){
-        return arr1;
-    }
-
-    while(array1Item||array2Item){
-        console.log(array1Item,array2Item);
-        if(!array2Item||array1Item < array2Item){
-            sortedArray.push(array1Item)
-        array1Item = arr1[i]
-        i++
-        }
-        else{
-            sortedArray.push(array2Item);
-            array2Item = arr2[j];
-            j++
-        }
-
-    }
-
-
-
-    return sortedArray
+  }
 }
 
-   console.log(mergeSortArray([1,5,7,9],[2,3,6,8]));
- 
-  
+var rep = recurringCharacter([7, 8, 3, 5, 8, 9, 8]);
+console.log(rep);
