@@ -307,17 +307,33 @@
 
 
 
-function recurringCharacter(input) {
-  for (let i = 0; i < input.length; i++) {
-    for (let j = i+1; j < input.length; j++) {
+// function recurringCharacter(input) {
+//   for (let i = 0; i < input.length; i++) {
+//     for (let j = i+1; j < input.length; j++) {
       
-    //  console.log(input[i],input[j]);
-      if ( input[i] === input[j]){
-        return input[i]
-      }
-    }
-  }
-}
+//     //  console.log(input[i],input[j]);
+//       if ( input[i] === input[j]){
+//         return input[i]
+//       }
+//     }
+//   }
+// }
 
-var rep = recurringCharacter([7, 8, 3, 5, 8, 9, 8]);
-console.log(rep);
+// var rep = recurringCharacter([7, 8, 3, 5, 8, 9, 8]);
+// console.log(rep);
+
+
+
+
+//..................LEETCODE...........................
+
+
+let a  = [12,3,6,1,9];
+let n = a.length;
+console.log(a);
+console.log(a.sort(function (a,b)
+{
+  
+  return a-b 
+})
+);
