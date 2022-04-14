@@ -292,25 +292,15 @@
 // user.age = 18;
 // console.log(user);
 
-
-
-
-
-
 // ........................FIRST RECURRING CHARACTER............................................
 
 // IF THE ARRAY IS [2,3,4,5,2,7,8,9] THE OP SHOULD BE 2
 // IF THE ARRAY IS [1,2,3,5,1,5,6,2] THE O/P SHOULD BE 1
 
-
-
-
-
-
 // function recurringCharacter(input) {
 //   for (let i = 0; i < input.length; i++) {
 //     for (let j = i+1; j < input.length; j++) {
-      
+
 //     //  console.log(input[i],input[j]);
 //       if ( input[i] === input[j]){
 //         return input[i]
@@ -322,18 +312,88 @@
 // var rep = recurringCharacter([7, 8, 3, 5, 8, 9, 8]);
 // console.log(rep);
 
-
-
-
 //..................LEETCODE...........................
 
+// let a  = [12,3,6,1,9];
+// let n = a.length;
+// console.log(a);
+// console.log(a.sort(function (a,b)
+// {
 
-let a  = [12,3,6,1,9];
+//   return a-b
+// })
+// );
+
+function findTriplets(a, n, sum) {
+  let i;
+
+  a.sort(function (a, b) {
+    return a - b;
+  });
+
+  let flag = false;
+
+  for (i = 0; i < n - 2; i++) {
+    if (i === 0 || a[i] > a[i - 1]) {
+      let start = i + 1;
+
+      let end = n - 1;
+
+      let target = sum - a[i];
+
+      while (start < end) {
+        if (start > i + 1 && a[start] === a[start - 1]) {
+          start++;
+          continue;
+        }
+
+        if (end < n - 1 && a[end] === a[end + 1]) {
+          end--;
+          continue;
+        }
+
+        if (target === a[start] + a[end]) {
+          console.log("[" + a[i] + "," + a[start] + "," + a[end] + "] ");
+          flag = true;
+          start++;
+          end--;
+        } else if (target > a[start] + a[end]) {
+          start++;
+        } else {
+          end--;
+        }
+      }
+    }
+  }
+
+  if (flag === false) {
+    document.write("No Such Triplets Exist");
+  }
+}
+
+let a = [12, 3, 6, 1, 6, 9];
 let n = a.length;
-console.log(a);
-console.log(a.sort(function (a,b)
-{
+let sum = 24;
+
+a.sort();
+findTriplets(a, n, sum);
+
+
+//..........LEET CODE.............................
+
+
+var twoSum = function(nums, target) {
+  var map = {};
+  for(var i = 0; i <nums.length; i++) {
+      var value = nums[i];
+      var complementpair = target - value;
+      if(map[complementpair] !== undefined) {
+          return [map[complementpair],i];
+          
+      }
+      else {
+          map[value] = i;
+      }
+  }
   
-  return a-b 
-})
-);
+};
