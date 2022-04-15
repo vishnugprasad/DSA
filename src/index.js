@@ -324,76 +324,116 @@
 // })
 // );
 
-function findTriplets(a, n, sum) {
-  let i;
+// function findTriplets(a, n, sum) {
+//   let i;
 
-  a.sort(function (a, b) {
-    return a - b;
-  });
+//   a.sort(function (a, b) {
+//     return a - b;
+//   });
 
-  let flag = false;
+//   let flag = false;
 
-  for (i = 0; i < n - 2; i++) {
-    if (i === 0 || a[i] > a[i - 1]) {
-      let start = i + 1;
+//   for (i = 0; i < n - 2; i++) {
+//     if (i === 0 || a[i] > a[i - 1]) {
+//       let start = i + 1;
 
-      let end = n - 1;
+//       let end = n - 1;
 
-      let target = sum - a[i];
+//       let target = sum - a[i];
 
-      while (start < end) {
-        if (start > i + 1 && a[start] === a[start - 1]) {
-          start++;
-          continue;
-        }
+//       while (start < end) {
+//         if (start > i + 1 && a[start] === a[start - 1]) {
+//           start++;
+//           continue;
+//         }
 
-        if (end < n - 1 && a[end] === a[end + 1]) {
-          end--;
-          continue;
-        }
+//         if (end < n - 1 && a[end] === a[end + 1]) {
+//           end--;
+//           continue;
+//         }
 
-        if (target === a[start] + a[end]) {
-          console.log("[" + a[i] + "," + a[start] + "," + a[end] + "] ");
-          flag = true;
-          start++;
-          end--;
-        } else if (target > a[start] + a[end]) {
-          start++;
-        } else {
-          end--;
-        }
-      }
-    }
-  }
+//         if (target === a[start] + a[end]) {
+//           console.log("[" + a[i] + "," + a[start] + "," + a[end] + "] ");
+//           flag = true;
+//           start++;
+//           end--;
+//         } else if (target > a[start] + a[end]) {
+//           start++;
+//         } else {
+//           end--;
+//         }
+//       }
+//     }
+//   }
 
-  if (flag === false) {
-    document.write("No Such Triplets Exist");
-  }
-}
+//   if (flag === false) {
+//     document.write("No Such Triplets Exist");
+//   }
+// }
 
-let a = [12, 3, 6, 1, 6, 9];
-let n = a.length;
-let sum = 24;
+// let a = [12, 3, 6, 1, 6, 9];
+// let n = a.length;
+// let sum = 24;
 
-a.sort();
-findTriplets(a, n, sum);
+// a.sort();
+// findTriplets(a, n, sum);
 
 
 //..........LEET CODE.............................
 
 
-var twoSum = function(nums, target) {
-  var map = {};
-  for(var i = 0; i <nums.length; i++) {
-      var value = nums[i];
-      var complementpair = target - value;
-      if(map[complementpair] !== undefined) {
-          return [map[complementpair],i];
+// var twoSum = function(nums, target) {
+//   var map = {};
+//   for(var i = 0; i <nums.length; i++) {
+//       var value = nums[i];
+//       var complementpair = target - value;
+//       if(map[complementpair] !== undefined) {
+//           return [map[complementpair],i];
           
-      }
-      else {
-          map[value] = i;
-      }
-  }
+//       }
+//       else {
+//           map[value] = i;
+//       }
+//   }
   
-};
+// };
+
+//...................LEETCODE 2......................
+
+
+var addTwoNumbers = function (l1,l2){
+  var ListNode;
+  let head = new ListNode(0);
+  let node = head
+  let carry = 0
+
+  while(l1||l2){
+
+    let l1value = l1 ? l1.val : 0;
+    let l2value = l2 ? l2.val : 0;
+    
+    let sum  = l1value + l2value + carry;
+    carry = 0
+    let newValue  = sum;
+    if(sum > 9){
+      newValue = sum % 10
+      carry = 1
+    }
+    node.next = new ListNode(newValue)
+    node =  node.next
+
+    if(l1){
+      l1 = l1.next
+    }
+    if(l2){
+      console.log(l2);
+      l2 = l2.next
+    }
+  }
+  if (carry){
+    node.next = new ListNode(carry)
+  }
+  return head.next
+}
+
+addTwoNumbers([2,4,3],[5,6,4])
