@@ -440,26 +440,55 @@
 
 //...........................3. Longest Substring Without Repeating Character (LEETCODE)...................
 
-function lengthOfLongestSubstring(check) {
-  var letters = check.split("");
-  var max = 0;
-  var result = new Map();
-  var start = 0;
+// function lengthOfLongestSubstring(check) {
+//   var letters = check.split("");
+//   var max = 0;
+//   var result = new Map();
+//   var start = 0;
   
-  for (var i = 0; i < letters.length; i++) {
-    if (!result.has(letters[i])) {
-      result.set(letters[i], i);
-    } else {
-      i = result.get(letters[i]);
-      result.clear();
-    }
+//   for (var i = 0; i < letters.length; i++) {
+//     if (!result.has(letters[i])) {
+//       result.set(letters[i], i);
+//     } else {
+//       i = result.get(letters[i]);
+//       result.clear();
+//     }
     
-    if (max < result.size) {
-      max = result.size;
-    }
+//     if (max < result.size) {
+//       max = result.size;
+//     }
+//   }
+//   return max;
+// }
+
+// // Example:
+// console.log(lengthOfLongestSubstring("dvdf")); // 3
+
+//.............................5. Longest Palindromic Substring................................
+
+const getDrome =  (left,right,s) => {
+
+  while(left >= 0 && right < s.length){
+    if(s[left]!== s[right])break;
+    left--;
+    right++;
+
   }
-  return max;
+
+  return [ left+1, right]
 }
 
-// Example:
-console.log(lengthOfLongestSubstring("dvdf")); // 3
+
+var longestPalindrom = function(s){
+  let max  = [0,1];
+
+  for(let i =0; i<s.length; i++){
+    let even = getDrome(i-1, i , s);
+    let odd =  getDrome(i-1, i+1, s);
+    let curMax = odd[1] - odd[0] > even[1] - even[0] ? odd : even;
+
+    max = max[1] - max[0] > curMax[1] - curMax[0] ? max : curMax;
+
+  }
+  return s.slice(max[0], max[1])
+}
