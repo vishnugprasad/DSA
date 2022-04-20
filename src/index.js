@@ -499,17 +499,35 @@
 //..........................reverse integer......................
 
 
-var reverse = function (num) {
+// var reverse = function (num) {
   
-  const reversedNumber = parseInt(
-      Math.abs(num).toString().split('').reverse().join('')
-  );
+//   const reversedNumber = parseInt(
+//       Math.abs(num).toString().split('').reverse().join('')
+//   );
 
   
-  if (reversedNumber > 2147483647) {
-      return 0;
+//   if (reversedNumber > 2147483647) {
+//       return 0;
+//   }
+
+  
+//   return num < 0 ? -Math.abs(reversedNumber) : reversedNumber;
+// };
+
+
+
+
+//.......................... Palindrome Number...............
+
+
+
+var isPalindrome = function(x) {
+  if (x < 0) return false;
+  var num = x;
+  var res = 0;
+  while (num !== 0) {
+    res = (res * 10) + (num % 10);
+    num = Math.floor(num / 10);
   }
-
-  
-  return num < 0 ? -Math.abs(reversedNumber) : reversedNumber;
+  return res === x;
 };
