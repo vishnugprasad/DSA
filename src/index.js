@@ -565,9 +565,46 @@
 
 
 
-const obj1  = { a :true};
-const obj2 = obj1;
-obj1.a = "vishnu"
-// delete obj1
-console.log(obj1); // pointer....pinting to the same memory location
-console.log(obj2);
+// const obj1  = { a :true};
+// const obj2 = obj1;
+// obj1.a = "vishnu"
+// // delete obj1
+// console.log(obj1); // pointer....pinting to the same memory location
+// console.log(obj2);
+
+
+
+//...................linked list......................
+
+// let myLinkedList = {
+//     head: {
+//         value : 10,
+//         next : {
+//             value : 5,
+//             next : {
+//                 value : 16,
+//                 next : null
+//             }
+//         }
+//     }
+// }
+
+
+class LinkedList {
+    constructor(value){
+        this.head = {
+            value: value,
+            next : null
+        }
+        this.tail = this.head
+        this.length = 1
+    }
+    append(value){
+
+    }
+}
+
+const myLinkedList = new LinkedList(10);
+myLinkedList.append()
+myLinkedList.append()
+console.log(myLinkedList);
