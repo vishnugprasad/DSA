@@ -745,22 +745,78 @@
 // }
 
 
-var removeElement = function(nums, val) {
+// var removeElement = function(nums, val) {
     
     
-        let p2 = 0;
-    for(let p1 = 0; p1 < nums.length; p1++){
-        if(nums[p1] !== val){
-            nums[p2] = nums[p1]
-            p2++
-        }
-        console.log(nums);
+//         let p2 = 0;
+//     for(let p1 = 0; p1 < nums.length; p1++){
+//         if(nums[p1] !== val){
+//             nums[p2] = nums[p1]
+//             p2++
+//         }
+//         console.log(nums);
         
-    }
+//     }
     
-    return p2
-}
+//     return p2
+// }
 
-let nums = [1,2,3,3,4,4,4,4,5,5,6,6]
+// let nums = [1,2,3,3,4,4,4,4,5,5,6,6]
 
-removeElement(nums, 4)
+// removeElement(nums, 4)
+
+
+
+
+// var plusOne = function(digits) {
+    
+//     var length  = digits.length;
+//     var curr = digits[length-1];
+//     console.log(curr);
+//     var update  = curr + 1;
+//     console.log(update);
+//     digits[length-1] = update
+//     return digits
+    
+    
+// };
+
+// console.log(plusOne(digits));
+
+
+// var plusOne = function(digits) {
+//     let end = digits.length - 1;
+//     for(let i = end; i >= 0; i--){
+//         if(digits[i] !== 9){
+//             digits[i] = digits[i] + 1;
+//             break;
+//         } else {
+//             digits[i] = 0;
+//         }
+//     }
+
+//     if(digits[0] === 0) digits.unshift(1);
+//     return digits;
+// };
+
+
+var digits = [1,2,3,4,9];
+
+
+
+
+var plusOne = function(digits){
+    var length = digits.length-1;
+    for( let i = length; i>=0; i--){
+        if(digits[i] !== 9){
+            digits[i] = digits[i]+1
+            break;
+        } else {
+            digits[i] = 0
+        }
+    }if(digits[0] ===0) digits.unshift(1);
+
+    return digits;
+    }
+
+    console.log(plusOne(digits));
