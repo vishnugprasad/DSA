@@ -610,52 +610,106 @@
 //.................................longest common prefix............................
 
 
-var longestCommonPrefix = function (strs) {
-        if (!strs.length) return '';
+// var longestCommonPrefix = function (strs) {
+//         if (!strs.length) return '';
 
    
-    for (let i = 0; i <= strs[0].length; i++) {
+//     for (let i = 0; i <= strs[0].length; i++) {
        
-        for (let j = 1; j < strs.length; j++) {
+//         for (let j = 1; j < strs.length; j++) {
           
-            if (strs[0][i] !== strs[j][i]) {
+//             if (strs[0][i] !== strs[j][i]) {
                 
-                return strs[0].slice(0, i);
-            }
-        }
-    }
+//                 return strs[0].slice(0, i);
+//             }
+//         }
+//     }
 
-    return strs[0];
-};
+//     return strs[0];
+// };
 
 //.............................Container With Most Water...............
 
 
-var maxArea = function(H) {
-    let ans = 0, i = 0, j = H.length-1
-    while (i < j) {
-        ans = Math.max(ans, Math.min(H[i], H[j]) * (j - i))
-        H[i] <= H[j] ? i++ : j--
+// var maxArea = function(H) {
+//     let ans = 0, i = 0, j = H.length-1
+//     while (i < j) {
+//         ans = Math.max(ans, Math.min(H[i], H[j]) * (j - i))
+//         H[i] <= H[j] ? i++ : j--
+//     }
+//     return ans
+// };
+
+
+// class LinkedList {
+//     constructor(value){
+//         this.head = {
+//             value: value,
+//             next : null
+//         }
+//         this.tail = this.head
+//         this.length = 1
+//     }
+//     append(value){
+
+//     }
+// }
+
+// const myLinkedList = new LinkedList(10);
+// myLinkedList.append()
+// myLinkedList.append()
+// console.log(myLinkedList);
+
+
+//...................... Remove Duplicates from Sorted Array......................
+
+
+let arr = [1,2,3,3,4,4,4,4,5,5,6,6]
+
+
+// var removeDuplicates = function(arr){
+//     if(arr.length === 0);
+//     return 0;
+
+//     let i = 0
+//     let j = 1
+
+//     while(j < arr.length) {
+//         if(arr[j] !== arr[i]) {
+//             i++
+//             arr[i] = arr[j]
+//             j++
+//         }
+
+//         else j++
+
+        
+//     }
+// return i+1
+
+// }
+// console.log(removeDuplicates(arr))
+// console.log(arr);
+
+
+
+
+var unique = (arr)=> {
+    if(arr.length === 0){
+        return 0;
     }
-    return ans
-};
 
+    else {
+        for( let i = 0; i <= arr.length; i++){
+            if(arr[i] === arr[i+1]){
+                i++
 
-class LinkedList {
-    constructor(value){
-        this.head = {
-            value: value,
-            next : null
+            }
+
+            else arr[i] = arr[i+1]
         }
-        this.tail = this.head
-        this.length = 1
     }
-    append(value){
-
-    }
+    console.log(arr);
 }
 
-const myLinkedList = new LinkedList(10);
-myLinkedList.append()
-myLinkedList.append()
-console.log(myLinkedList);
+unique(arr)
