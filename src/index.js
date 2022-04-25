@@ -664,7 +664,7 @@
 //...................... Remove Duplicates from Sorted Array......................
 
 
-let arr = [1,2,3,3,4,4,4,4,5,5,6,6]
+// let arr = [1,2,3,3,4,4,4,4,5,5,6,6]
 
 
 // var removeDuplicates = function(arr){
@@ -694,22 +694,52 @@ let arr = [1,2,3,3,4,4,4,4,5,5,6,6]
 
 
 
-var unique = (arr)=> {
-    if(arr.length === 0){
-        return 0;
-    }
+// var unique = (arr)=> {
+//     if(arr.length === 0){
+//         return 0;
+//     }
 
-    else {
-        for( let i = 0; i <= arr.length; i++){
-            if(arr[i] === arr[i+1]){
-                i++
+//     else {
+//         for( let i = 0; i <= arr.length; i++){
+//             if(arr[i] === arr[i+1]){
+//                 i++
 
-            }
+//             }
 
-            else arr[i] = arr[i+1]
+//             else arr[i] = arr[i+1]
+//         }
+//     }
+//     console.log(arr);
+// }
+
+// unique(arr)
+
+let nums = [1,2,3,3,4,4,4,4,5,5,6,6]
+
+var removeDuplicates = function(nums) {
+    // Handling Edge Case
+    if(nums.length === 0 ) return 0
+      let p1 = 0
+      for(let p2 = 1; p2< nums.length; p2++){
+         if(nums[p1] !== nums[p2]){
+             p1++;
+             nums[p1] = nums[p2]
+         }       
+      }
+      console.log(nums);
+     return p1 +1        
+ }
+console.log(removeDuplicates(nums));
+ 
+
+
+var removeDuplicates = function(nums){
+    let p = 0;
+    for(let q =1; q < nums.length; q++){
+        if(nums[p] !== nums[q]){
+            p++;
+            nums[p] = nums[q]
         }
     }
-    console.log(arr);
+    return p+1
 }
-
-unique(arr)
