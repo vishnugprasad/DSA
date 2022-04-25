@@ -714,32 +714,53 @@
 
 // unique(arr)
 
-let nums = [1,2,3,3,4,4,4,4,5,5,6,6]
+// let nums = [1,2,3,3,4,4,4,4,5,5,6,6]
 
-var removeDuplicates = function(nums) {
-    // Handling Edge Case
-    if(nums.length === 0 ) return 0
-      let p1 = 0
-      for(let p2 = 1; p2< nums.length; p2++){
-         if(nums[p1] !== nums[p2]){
-             p1++;
-             nums[p1] = nums[p2]
-         }       
-      }
-      console.log(nums);
-     return p1 +1        
- }
-console.log(removeDuplicates(nums));
+// var removeDuplicates = function(nums) {
+//     // Handling Edge Case
+//     if(nums.length === 0 ) return 0
+//       let p1 = 0
+//       for(let p2 = 1; p2< nums.length; p2++){
+//          if(nums[p1] !== nums[p2]){
+//              p1++;
+//              nums[p1] = nums[p2]
+//          }       
+//       }
+//       console.log(nums);
+//      return p1 +1        
+//  }
+// console.log(removeDuplicates(nums));
  
 
 
-var removeDuplicates = function(nums){
-    let p = 0;
-    for(let q =1; q < nums.length; q++){
-        if(nums[p] !== nums[q]){
-            p++;
-            nums[p] = nums[q]
+// var removeDuplicates = function(nums){
+//     let p = 0;
+//     for(let q =1; q < nums.length; q++){
+//         if(nums[p] !== nums[q]){
+//             p++;
+//             nums[p] = nums[q]
+//         }
+//     }
+//     return p+1
+// }
+
+
+var removeElement = function(nums, val) {
+    
+    
+        let p2 = 0;
+    for(let p1 = 0; p1 < nums.length; p1++){
+        if(nums[p1] !== val){
+            nums[p2] = nums[p1]
+            p2++
         }
+        console.log(nums);
+        
     }
-    return p+1
+    
+    return p2
 }
+
+let nums = [1,2,3,3,4,4,4,4,5,5,6,6]
+
+removeElement(nums, 4)
