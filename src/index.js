@@ -634,6 +634,24 @@
 // myLinkedList.append()
 // console.log(myLinkedList);
 
+ var arr = [1,2,2,1,4,1,3]
+var singleNumber = function(nums) {
+    const ht = {}
+    for(const i of nums){
+        ht[i] = ht[i]+1 || 1;
+    }
+
+    for (const key in ht){
+        if(ht[key] === 1) {
+            return key
+        }
+    }
+}
+
+console.log(singleNumber(arr));
+
+
+
 //...................... Remove Duplicates from Sorted Array......................
 
 // let arr = [1,2,3,3,4,4,4,4,5,5,6,6]
@@ -842,17 +860,17 @@
 
 
 
-class LinkedList {
-  constructor(value) {
-   this.head = {
-       value : value,
-       next : null
-   }
-   this.tail = this.head;
-   this.length = 1
-   }
-  }
+// class LinkedList {
+//   constructor(value) {
+//    this.head = {
+//        value : value,
+//        next : null
+//    }
+//    this.tail = this.head;
+//    this.length = 1
+//    }
+//   }
 
 
-const myLinkedList = new LinkedList(10)
-console.log( myLinkedList);
+// const myLinkedList = new LinkedList(10)
+// console.log( myLinkedList);
