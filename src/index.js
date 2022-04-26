@@ -378,9 +378,7 @@
 // a.sort();
 // findTriplets(a, n, sum);
 
-
 //..........LEET CODE.............................
-
 
 // var twoSum = function(nums, target) {
 //   var map = {};
@@ -389,17 +387,16 @@
 //       var complementpair = target - value;
 //       if(map[complementpair] !== undefined) {
 //           return [map[complementpair],i];
-          
+
 //       }
 //       else {
 //           map[value] = i;
 //       }
 //   }
-  
+
 // };
 
 //...................LEETCODE 2......................
-
 
 // var addTwoNumbers = function (l1,l2){
 //   // var ListNode;
@@ -411,7 +408,7 @@
 
 //     let l1value = l1 ? l1.val : 0;
 //     let l2value = l2 ? l2.val : 0;
-    
+
 //     let sum  = l1value + l2value + carry;
 //     carry = 0
 //     let newValue  = sum;
@@ -445,7 +442,7 @@
 //   var max = 0;
 //   var result = new Map();
 //   var start = 0;
-  
+
 //   for (var i = 0; i < letters.length; i++) {
 //     if (!result.has(letters[i])) {
 //       result.set(letters[i], i);
@@ -453,7 +450,7 @@
 //       i = result.get(letters[i]);
 //       result.clear();
 //     }
-    
+
 //     if (max < result.size) {
 //       max = result.size;
 //     }
@@ -478,7 +475,6 @@
 //   return [ left+1, right]
 // }
 
-
 // var longestPalindrom = function(s){
 //   let max  = [0,1];
 
@@ -493,33 +489,22 @@
 //   return s.slice(max[0], max[1])
 // }
 
-
-
-
 //..........................reverse integer......................
 
-
 // var reverse = function (num) {
-  
+
 //   const reversedNumber = parseInt(
 //       Math.abs(num).toString().split('').reverse().join('')
 //   );
 
-  
 //   if (reversedNumber > 2147483647) {
 //       return 0;
 //   }
 
-  
 //   return num < 0 ? -Math.abs(reversedNumber) : reversedNumber;
 // };
 
-
-
-
 //.......................... Palindrome Number...............
-
-
 
 // var isPalindrome = function(x) {
 //   if (x < 0) return false;
@@ -532,14 +517,12 @@
 //   return res === x;
 // };
 
-
 //......................13. Roman to Integer...................
 
-
 // var romanToInt = function (s) {
- 
+
 //   const romanMap = new Map();
- 
+
 //   romanMap.set('I', 1);
 //   romanMap.set('V', 5);
 //   romanMap.set('X', 10);
@@ -547,13 +530,13 @@
 //   romanMap.set('C', 100);
 //   romanMap.set('D', 500);
 //   romanMap.set('M', 1000);
- 
+
 //   const n = s.length;
-  
+
 //   let num = romanMap.get(s[n - 1]);
 
 //   for (let i = n - 2; i >= 0; i--) {
-      
+
 //       if (romanMap.get(s[i]) >= romanMap.get(s[i + 1])) {
 //           num += romanMap.get(s[i]);
 //       } else {
@@ -563,16 +546,12 @@
 //   return num;
 // };
 
-
-
 // const obj1  = { a :true};
 // const obj2 = obj1;
 // obj1.a = "vishnu"
 // // delete obj1
 // console.log(obj1); // pointer....pinting to the same memory location
 // console.log(obj2);
-
-
 
 //...................linked list......................
 
@@ -588,7 +567,7 @@
 //         }
 //     }
 // }
- //..............leetcode.......................
+//..............leetcode.......................
 //  var convert = function(s, numRows) {
 //     if (s.length <= numRows || numRows < 2) return s;
 //     var len = s.length;
@@ -606,20 +585,17 @@
 //     return res.join('');
 //   };
 
-
 //.................................longest common prefix............................
-
 
 // var longestCommonPrefix = function (strs) {
 //         if (!strs.length) return '';
 
-   
 //     for (let i = 0; i <= strs[0].length; i++) {
-       
+
 //         for (let j = 1; j < strs.length; j++) {
-          
+
 //             if (strs[0][i] !== strs[j][i]) {
-                
+
 //                 return strs[0].slice(0, i);
 //             }
 //         }
@@ -630,7 +606,6 @@
 
 //.............................Container With Most Water...............
 
-
 // var maxArea = function(H) {
 //     let ans = 0, i = 0, j = H.length-1
 //     while (i < j) {
@@ -639,7 +614,6 @@
 //     }
 //     return ans
 // };
-
 
 // class LinkedList {
 //     constructor(value){
@@ -660,12 +634,9 @@
 // myLinkedList.append()
 // console.log(myLinkedList);
 
-
 //...................... Remove Duplicates from Sorted Array......................
 
-
 // let arr = [1,2,3,3,4,4,4,4,5,5,6,6]
-
 
 // var removeDuplicates = function(arr){
 //     if(arr.length === 0);
@@ -683,16 +654,12 @@
 
 //         else j++
 
-        
 //     }
 // return i+1
 
 // }
 // console.log(removeDuplicates(arr))
 // console.log(arr);
-
-
-
 
 // var unique = (arr)=> {
 //     if(arr.length === 0){
@@ -724,14 +691,12 @@
 //          if(nums[p1] !== nums[p2]){
 //              p1++;
 //              nums[p1] = nums[p2]
-//          }       
+//          }
 //       }
 //       console.log(nums);
-//      return p1 +1        
+//      return p1 +1
 //  }
 // console.log(removeDuplicates(nums));
- 
-
 
 // var removeDuplicates = function(nums){
 //     let p = 0;
@@ -744,10 +709,8 @@
 //     return p+1
 // }
 
-
 // var removeElement = function(nums, val) {
-    
-    
+
 //         let p2 = 0;
 //     for(let p1 = 0; p1 < nums.length; p1++){
 //         if(nums[p1] !== val){
@@ -755,9 +718,9 @@
 //             p2++
 //         }
 //         console.log(nums);
-        
+
 //     }
-    
+
 //     return p2
 // }
 
@@ -765,11 +728,8 @@
 
 // removeElement(nums, 4)
 
-
-
-
 // var plusOne = function(digits) {
-    
+
 //     var length  = digits.length;
 //     var curr = digits[length-1];
 //     console.log(curr);
@@ -777,12 +737,10 @@
 //     console.log(update);
 //     digits[length-1] = update
 //     return digits
-    
-    
+
 // };
 
 // console.log(plusOne(digits));
-
 
 // var plusOne = function(digits) {
 //     let end = digits.length - 1;
@@ -799,24 +757,102 @@
 //     return digits;
 // };
 
+// var digits = [1,2,3,4,9];
 
-var digits = [1,2,3,4,9];
+// var plusOne = function(digits){
+//     var length = digits.length-1;
+//     for( let i = length; i>=0; i--){
+//         if(digits[i] !== 9){
+//             digits[i] = digits[i]+1
+//             break;
+//         } else {
+//             digits[i] = 0
+//         }
+//     }if(digits[0] ===0) digits.unshift(1);
+
+//     return digits;
+//     }
+
+//     console.log(plusOne(digits));
+
+// class LinkedList {
+//     constructor(value) {
+//       this.head = {
+//         value: value,
+//         next: null
+//       };
+//       this.tail = this.head;
+//       this.length = 1;
+//     }
+//     append(value) {
+//       const newNode = {
+//         value: value,
+//         next: null
+//       }
+//       this.tail.next = newNode;
+//       this.tail = newNode;
+//       this.length++;
+//       return this;
+//     }
+//     prepend(value) {
+//       const newNode = {
+//         value: value,
+//         next: null
+//       }
+//       newNode.next = this.head;
+//       this.head = newNode;
+//       this.length++;
+//       return this;
+//     }
+//     printList() {
+//       const array = [];
+//       let currentNode = this.head;
+//       while(currentNode !== null){
+//           array.push(currentNode.value)
+//           currentNode = currentNode.next
+//       }
+//       return array;
+//     }
+//     insert(index, value){
+//       //Code here
+//       return this.printList();
+//     }
+//   }
+
+//   let myLinkedList = new LinkedList(10);
+//   myLinkedList.append(5);
+//   myLinkedList.append(16);myLinkedList.prepend(1)
+//   myLinkedList.insert(2, 99)
+//   myLinkedList.insert(20, 88)
+
+// let myLinkedList = {
+//   head: {
+//     value: 10,
+//     next: {
+//       value: 20,
+//       next: {
+//         value: 30,
+//         next: null,
+//       },
+//     },
+//   },
+// };
+
+// console.log(myLinkedList);
 
 
 
+class LinkedList {
+  constructor(value) {
+   this.head = {
+       value : value,
+       next : null
+   }
+   this.tail = this.head;
+   this.length = 1
+   }
+  }
 
-var plusOne = function(digits){
-    var length = digits.length-1;
-    for( let i = length; i>=0; i--){
-        if(digits[i] !== 9){
-            digits[i] = digits[i]+1
-            break;
-        } else {
-            digits[i] = 0
-        }
-    }if(digits[0] ===0) digits.unshift(1);
 
-    return digits;
-    }
-
-    console.log(plusOne(digits));
+const myLinkedList = new LinkedList(10)
+console.log( myLinkedList);
