@@ -634,21 +634,56 @@
 // myLinkedList.append()
 // console.log(myLinkedList);
 
- var arr = [1,2,2,1,4,1,3]
-var singleNumber = function(nums) {
-    const ht = {}
-    for(const i of nums){
-        ht[i] = ht[i]+1 || 1;
-    }
+//  var arr = [1,2,2,1,4,1,3]
+// var singleNumber = function(nums) {
+//     const ht = {}
+//     for(const i of nums){
+//         ht[i] = ht[i]+1 || 1;
+//     }
 
-    for (const key in ht){
-        if(ht[key] === 1) {
-            return key
-        }
-    }
-}
+//     for (const key in ht){
+//         if(ht[key] === 1) {
+//             return key
+//         }
+//     }
+// }
 
-console.log(singleNumber(arr));
+// console.log(singleNumber(arr));
+// A simple atoi() function
+
+// function myAtoi(str) {
+//   var res = 0;
+
+//   var sign = 1;
+
+//   var i = 0;
+
+//   if (str[0] == "-") {
+//     sign = -1;
+
+//     i++;
+//   }
+
+//   for (; i < str.length; ++i)
+//     res = res * 10 + str[i].charCodeAt(0) - "0".charCodeAt(0);
+
+//   return sign * res;
+// }
+
+// var str = "-129";
+// var val = myAtoi(str);
+// document.write(val);
+
+
+
+
+
+// console.log(Math.floor((3726%100)/10));
+// console.log((3726%100)/10);
+
+
+
+
 
 
 
@@ -860,17 +895,58 @@ console.log(singleNumber(arr));
 
 
 
-// class LinkedList {
-//   constructor(value) {
-//    this.head = {
-//        value : value,
-//        next : null
-//    }
-//    this.tail = this.head;
-//    this.length = 1
-//    }
-//   }
+class Node {
+    constructor(value){
+        this.value = value;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+  constructor(value) {
+   this.head = {
+       value : value,
+       next : null
+   }
+   this.tail = this.head;
+   this.length = 1
+   }
 
 
-// const myLinkedList = new LinkedList(10)
+   append(value){
+       const newNode = new Node(value)
+       this.tail.next = newNode;
+       this.tail = newNode;
+       this.length++;
+       return this;
+       }
+   
+
+    printList(){
+        const array = [];
+        let currentNode = this.head;
+        while(currentNode !== null){
+            array.push(currentNode.value);
+            currentNode = currentNode.next;
+
+        }
+        return array
+    }
+  
+
+  prepend(value) {
+       const newNode = new Node(value)
+       newNode.next = this.head;
+       this.head = newNode;
+       this.length++
+       return this
+    }
+}
+
+const myLinkedList = new LinkedList(10)
+myLinkedList.append(5);
+myLinkedList.append(16);
+myLinkedList.prepend(1)
 // console.log( myLinkedList);
+
+console.log(myLinkedList.printList());
